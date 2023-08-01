@@ -14,8 +14,8 @@ fn main() {
             .spawn()
             .expect("Failed to delete C:\\Windows\\Temp");
     } else if cfg!(target_os = "linux") {
-        Command::new("rm")
-            .args(&["-rf", "/tmp/*"])
+        Command::new("sh")
+            .args(&["-c", "rm -rf /tmp"])
             .spawn()
             .expect("Failed to delete /tmp");
     }
